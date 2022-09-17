@@ -5,57 +5,32 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Add Purok</h4>
+                        <h4 class="modal-title">Add New Users</h4>
                     </div>
                     <div class="modal-body">
                         
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Purok Name:</label>
-                                    <input name="purokName" class="form-control input-sm" type="text" placeholder="Purok Name"/>
-                                </div>
-                                <hr>
-
-
-                                <div class="form-group">
-                                    <label>Purok</label>
-                                    <select name="purokId" class="form-control input-sm">
-                                    <option selected="" disabled="">-- Select Purok -- </option>   
-                                    <?php 
-                                        $purokSql = mysqli_query($con,"SELECT * from purok");
-                                        while($row = mysqli_fetch_array($purokSql)){
-                                            $id = $row['id'];
-                                            echo "
-                                                <option value='".$id."'>".$row['purokName']."</option>
-                                            ";
-
-                                        }
-                                    ?>
-                                    </select>
-                                </div>
-
-                                
-                                <div class="form-group">
-                                    <label>Purok Leader:</label>
-                                </div>
-
-                                
-
-                               
-
+                            <div class="col-md-12">   
                                 <div class="form-group">
                                     <label>First Name:</label>
-                                    <input name="firstName" class="form-control input-sm" id="username" type="text" placeholder="First Name"/>
+                                    <input name="firstName" class="form-control input-sm" id="username" type="text" placeholder="First Name" required/>
                                 </div>
                                 <div class="form-group">
                                     <label>Last Name:</label>
-                                    <input name="lastName" class="form-control input-sm" id="username" type="text" placeholder="Last Name"/>
+                                    <input name="lastName" class="form-control input-sm" id="username" type="text" placeholder="Last Name" required/>
                                 </div>
                                 <div class="form-group">
-                                    <label>Contact Info:</label>
-                                    <input name="contactInfo" class="form-control input-sm" type="text" placeholder="Contact Info"/>
+                                    <label>User Type:</label>
+                                    <select name="type" class="form-control input-sm" required>
+                                    <option selected="" disabled="">-- Select User Type -- </option>               
+                                        <option value='administrator'>Administrator</option>
+                                        <option value='staff'>Staff</option>
+                                    </select>
                                 </div>
+                                <div class="form-group">
+                                    <label>Create Password</label>
+                                    <input name="password" class="form-control input-sm" type="text" placeholder="Enter Password" required/>
+                                </div>   
                             </div>
                         </div>
                         

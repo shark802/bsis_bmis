@@ -50,7 +50,9 @@ session_start();
             $username = $_POST['txt_username'];
             $password = $_POST['txt_password'];
 
-            $admin = mysqli_query($con, "SELECT * from tbluser where username = '$username' and password = '$password' and type = 'administrator'");
+            $hashPassword = md5($password);
+
+            $admin = mysqli_query($con, "SELECT * from tbluser where username = '$username' and password = '$hashPassword' and type = 'administrator'");
             $numrow_admin = mysqli_num_rows($admin);
 
             if($numrow_admin > 0)

@@ -1,28 +1,32 @@
 <?php
 if(isset($_POST['btn_add'])){
-    $purokName = $_POST['purokName'];
+    //$username = $_POST['username'];
+    $password = $_POST['password'];
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
-    $contactInfo = $_POST['contactInfo'];
+    $type = $_POST['type'];
 
-    if(isset($_SESSION['role'])){
-        $action = 'Added Purok Leader '.$purokName;
-        $iquery = mysqli_query($con,"INSERT INTO tbllogs (user,logdate,action) values ('".$_SESSION['role']."', NOW(), '".$action."')");
-    }
+    $username = $firstName.'.'.$lastName;
+    $username = strtolower(preg_replace('/\s+/', '', $username));
 
-    $purokQuery = mysqli_query($con,"SELECT * from purok where purokName = '".$purokName."' ");
-    $countPurok = mysqli_num_rows($purokQuery);
+    $userQuery = mysqli_query($con,"SELECT * from tbluser where firstname = '".$firstName."' AND lastname = '".$lastName."'"); 
+    $userCount = mysqli_num_rows($userQuery);
 
-    if($countPurok == 0){
-        $query = mysqli_query($con,"INSERT INTO purok (purokName,firstName,lastName,contactInfo) 
-            values ('$purokName', '$firstName', '$lastName', '$contactInfo')") or die('Error: ' . mysqli_error($con));
+    if($userCount == 0){
+        if(isset($_SESSION['role'])){
+            $action = 'Added New User'.$lastName.' '.$firstName;
+            $iquery = mysqli_query($con,"INSERT INTO tbllogs (user,logdate,action) values ('".$_SESSION['role']."', NOW(), '".$action."')");
+        }
+    
+        $hashPassword = md5($password);
+        $query = mysqli_query($con,"INSERT INTO tbluser (username,password,firstname,lastname,type) 
+            values ('$username','$hashPassword', '$firstName', '$lastName', '$type')") or die('Error: ' . mysqli_error($con));
         if($query == true)
         {
             $_SESSION['added'] = 1;
             header ("location: ".$_SERVER['REQUEST_URI']);
         } 
-    }
-    else{
+    } else{
         $_SESSION['duplicateuser'] = 1;
         header ("location: ".$_SERVER['REQUEST_URI']);
     } 
@@ -32,31 +36,41 @@ if(isset($_POST['btn_add'])){
 if(isset($_POST['btn_save']))
 {
     $id = $_POST['id'];
-    $purokName = $_POST['purokName'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
-    $contactInfo = $_POST['contactInfo'];
+    $type = $_POST['type'];
 
-    if(isset($_SESSION['role'])){
-        $action = 'Update Purok Info'.$purokName;
-        $iquery = mysqli_query($con,"INSERT INTO tbllogs (user,logdate,action) values ('".$_SESSION['role']."', NOW(), '".$action."')");
-    }
+    $username = $firstName.'.'.$lastName;
+    $username = strtolower(preg_replace('/\s+/', '', $username));
 
-    $purokQuery = mysqli_query($con,"SELECT * from purok where purokName = '".$purokName."' ");
-    $countPurok = mysqli_num_rows($purokQuery);
-    
-    if($ct == 0){
-        $update_query = mysqli_query($con,"UPDATE purok set purokName = '".$purokName."', firstName = '".$firstName."', lastName = '".$lastName."', contactInfo = '".$contactInfo."' where id = '".$id."' ") or die('Error: ' . mysqli_error($con));
+    $username = $firstName.'.'.$lastName;
+    $username = strtolower(preg_replace('/\s+/', '', $username));
+
+    $userQuery = mysqli_query($con,"SELECT * from tbluser where firstname = '".$firstName."' AND lastname = '".$lastName."'"); 
+    $userCount = mysqli_num_rows($userQuery);
+
+    if($userCount == 0){
+        if(isset($_SESSION['role'])){
+            $action = 'Update User'.$username;
+            $iquery = mysqli_query($con,"INSERT INTO tbllogs (user,logdate,action) values ('".$_SESSION['role']."', NOW(), '".$action."')");
+        }
+
+        $hashPassword = md5($password);
+        $update_query = mysqli_query($con,"UPDATE tbluser set username = '".$username."',
+                                        password = '".$hashPassword."', firstname = '".$firstName."', lastname = '".$lastName."', type = '".$type."' where id = '".$id."' ") or die('Error: ' . mysqli_error($con));
 
         if($update_query == true){
             $_SESSION['edited'] = 1;
             header("location: ".$_SERVER['REQUEST_URI']);
         }
-    }
-    else{
+    } else{
         $_SESSION['duplicateuser'] = 1;
         header ("location: ".$_SERVER['REQUEST_URI']);
     } 
+
+   
 }
 
 if(isset($_POST['btn_delete']))
@@ -65,7 +79,7 @@ if(isset($_POST['btn_delete']))
     {
         foreach($_POST['chk_delete'] as $value)
         {
-            $delete_query = mysqli_query($con,"DELETE from purok where id = '$value' ") or die('Error: ' . mysqli_error($con));
+            $delete_query = mysqli_query($con,"DELETE from tbluser where id = '$value' ") or die('Error: ' . mysqli_error($con));
                     
             if($delete_query == true)
             {

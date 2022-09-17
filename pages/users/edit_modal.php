@@ -9,28 +9,33 @@
         <div class="modal-body">
         <div class="row">
         <div class="col-md-12">
-            <input name="id" class="form-control input-sm" type="hidden" value="'.$row['id'].'"/>
             <div class="form-group">
-                <label>Purok Name:</label>
-                <input name="purokName" class="form-control input-sm" type="text" placeholder="Purok Name" value="'.$row['purokName'].'"/>
-            </div>
-            <hr>
+                <label>Username</label>
+                <input name="id" type="hidden" value="'.$row['id'].'" readonly/>
+                <input name="username" class="form-control input-sm" type="text" placeholder="Enter Username" value="'.$row['username'].'" readonly/>
+            </div> 
             <div class="form-group">
-                <label>Purok Leader:</label>
-            </div>
+                <label>Password</label>
+                <input name="password" class="form-control input-sm" type="password" placeholder="Enter Password" value="'.$row['password'].'" required/>
+            </div>     
             <div class="form-group">
                 <label>First Name:</label>
-                <input name="firstName" class="form-control input-sm" id="username" type="text" placeholder="First Name" value="'.$row['firstName'].'"/>
+                <input name="firstName" class="form-control input-sm" id="username" type="text" placeholder="First Name" value="'.$row['firstname'].'" required/>
             </div>
             <div class="form-group">
                 <label>Last Name:</label>
-                <input name="lastName" class="form-control input-sm" id="username" type="text" placeholder="Last Name" value="'.$row['lastName'].'"/>
+                <input name="lastName" class="form-control input-sm" id="username" type="text" placeholder="Last Name" value="'.$row['lastname'].'" required/>
             </div>
             <div class="form-group">
-                <label>Contact Info:</label>
-                <input name="contactInfo" class="form-control input-sm" type="text" placeholder="Contact Info" value="'.$row['contactInfo'].'"/>
+                <label>User Type:</label>
+                <select name="type" class="form-control input-sm" required>
+                <option selected="'.$row['type'].'">'.$row['type'].'</option>               
+                    <option value="administrator">Administrator</option>
+                    <option value="staff">Staff</option>
+                </select>
             </div>
         </div>
+    </div>
     </div>
         </div>
         <div class="modal-footer">
