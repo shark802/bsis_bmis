@@ -13,7 +13,7 @@
             $p = mysqli_query($con,"SELECT * from tblactivityphoto where activityid = '".$row['id']."' ");
             while($row1 = mysqli_fetch_array($p)){
                 echo '<div class="col-md-4">
-                    <input type="checkbox" name="chk_deletephoto[]" class="chk_deletephoto" value="'.$row1['id'].'" />
+                    <input type="checkbox" name="chk_selectedphoto[]" class="chk_selectedphoto" value="'.$row1['id'].'" />
                     <image src="photo/'.basename($row1['filename']).'" style="width:170px;height:170px;"/>
                 </div>';
             }

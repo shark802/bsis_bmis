@@ -30,10 +30,15 @@
                             </li>
                           
                             <li>
-                                <a href="../resident/resident.php">
+                                <a href="../seniorcitizen/seniorcitizen.php">
                                     <i class="fa fa-users"></i> <span>Senior Citizens</span>
                                 </a>
                             </li>
+                            <li>
+                            <a href="../pension/pension.php">
+                                <i class="fa fa-users"></i> <span>Pension</span>
+                            </a>
+                        </li>
                             <li>
                                 <a href="../permit/permit.php">
                                     <i class="fa fa-file"></i> <span>Permit</span>

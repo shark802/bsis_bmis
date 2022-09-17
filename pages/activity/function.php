@@ -69,9 +69,9 @@ if(isset($_POST['btn_save']))
 
 if(isset($_POST['btn_delete']))
 {
-    if(isset($_POST['chk_delete']))
+    if(isset($_POST['chk_selected']))
     {
-        foreach($_POST['chk_delete'] as $value)
+        foreach($_POST['chk_selected'] as $value)
         {
             $delete_query = mysqli_query($con,"DELETE from tblactivity where id = '$value' ") or die('Error: ' . mysqli_error($con));
                     
@@ -116,9 +116,9 @@ if(isset($_POST['btn_addimage'])){
 
 if(isset($_POST['btn_remove']))
 {
-    if(isset($_POST['chk_deletephoto']))
+    if(isset($_POST['chk_selectedphoto']))
     {
-        foreach($_POST['chk_deletephoto'] as $value)
+        foreach($_POST['chk_selectedphoto'] as $value)
         {
             $delete_query = mysqli_query($con,"DELETE from tblactivityphoto where id = '$value' ") or die('Error: ' . mysqli_error($con));
                     

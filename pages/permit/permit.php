@@ -75,7 +75,7 @@
                                                 if(!isset($_SESSION['staff']))
                                                 {
                                                 ?>
-                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_delete[]" class="cbxMain" onchange="checkMain(this)"/></th>
+                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_selected[]" class="cbxMain" onchange="checkMain(this)"/></th>
                                                 <?php
                                                     }
                                                 ?>
@@ -99,7 +99,7 @@
                                                 {
                                                     echo '
                                                     <tr>
-                                                        <td><input type="checkbox" name="chk_delete[]" class="chk_delete" value="'.$row['pid'].'" /></td>
+                                                        <td><input type="checkbox" name="chk_selected[]" class="chk_selected" value="'.$row['pid'].'" /></td>
                                                         <td>'.$row['residentname'].'</td>
                                                         <td>'.$row['businessName'].'</td>
                                                         <td>'.$row['businessAddress'].'</td>
@@ -145,7 +145,7 @@
                                                 if(!isset($_SESSION['staff']))
                                                 {
                                                 ?>
-                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_delete[]" class="cbxMain" onchange="checkMain(this)"/></th>
+                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_selected[]" class="cbxMain" onchange="checkMain(this)"/></th>
                                                 <?php
                                                     }
                                                 ?>
@@ -166,7 +166,7 @@
                                                 {
                                                     echo '
                                                     <tr>
-                                                        <td><input type="checkbox" name="chk_delete[]" class="chk_delete" value="'.$row['pid'].'" /></td>
+                                                        <td><input type="checkbox" name="chk_selected[]" class="chk_selected" value="'.$row['pid'].'" /></td>
                                                         <td>'.$row['residentname'].'</td>
                                                         <td>'.$row['businessName'].'</td>
                                                         <td>'.$row['businessAddress'].'</td>
@@ -238,7 +238,7 @@
                                     <table id="table" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_delete[]" class="cbxMain" onchange="checkMain(this)"/></th>
+                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_selected[]" class="cbxMain" onchange="checkMain(this)"/></th>
                                                 <th>Resident</th>
                                                 <th>Business Name</th>
                                                 <th>Business Address</th>
@@ -253,7 +253,7 @@
                                             {
                                                 echo '
                                                 <tr>
-                                                    <td><input type="checkbox" name="chk_delete[]" class="chk_delete" value="'.$row['pid'].'" /></td>
+                                                    <td><input type="checkbox" name="chk_selected[]" class="chk_selected" value="'.$row['pid'].'" /></td>
                                                     <td>'.$row['residentname'].'</td>
                                                     <td>'.$row['businessName'].'</td>
                                                     <td>'.$row['businessAddress'].'</td>

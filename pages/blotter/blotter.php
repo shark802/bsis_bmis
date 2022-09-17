@@ -63,7 +63,7 @@
                                                 if(!isset($_SESSION['staff']))
                                                 {
                                                 ?>
-                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_delete[]" class="cbxMain" onchange="checkMain(this)"/></th>
+                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_selected[]" class="cbxMain" onchange="checkMain(this)"/></th>
                                                 <?php
                                                     }
                                                 ?>
@@ -87,7 +87,7 @@
                                                 {
                                                     echo '
                                                     <tr>
-                                                        <td><input type="checkbox" name="chk_delete[]" class="chk_delete" value="'.$row['id'].'" /></td>
+                                                        <td><input type="checkbox" name="chk_selected[]" class="chk_selected" value="'.$row['id'].'" /></td>
                                                         <td>'.$row['dateRecorded'].'</td>
                                                         <td>'.$row['complainant'].'</td>
                                                         <td>'.$row['rname'].'</td>

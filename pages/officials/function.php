@@ -84,9 +84,9 @@ if(isset($_POST['btn_start']))
 
 if(isset($_POST['btn_delete']))
 {
-    if(isset($_POST['chk_delete']))
+    if(isset($_POST['chk_selected']))
     {
-        foreach($_POST['chk_delete'] as $value)
+        foreach($_POST['chk_selected'] as $value)
         {
             $delete_query = mysqli_query($con,"DELETE from tblofficial where id = '$value' ") or die('Error: ' . mysqli_error($con));
                     

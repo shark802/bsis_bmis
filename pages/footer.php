@@ -25,7 +25,7 @@
 	    var checked = $(x).prop('checked');
 	    $('.cbxMain').prop('checked', checked)
 	    $('tr:visible').each(function () {
-	        $(this).find('.chk_delete').each(function () {
+	        $(this).find('.chk_selected').each(function () {
 	            this.checked = checked;
 	        });
 	    });
@@ -132,8 +132,8 @@
     }
 
 $(document).ready(function (){   	
-	$('.chk_delete').click(function () {
-        if ($('.chk_delete:checked').length == $('.chk_delete').length) {
+	$('.chk_selected').click(function () {
+        if ($('.chk_selected:checked').length == $('.chk_selected').length) {
             $('.cbxMain').prop('checked', true);
         }
         else {

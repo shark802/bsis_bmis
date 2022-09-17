@@ -71,7 +71,7 @@
                                                     if(!isset($_SESSION['staff']))
                                                     {
                                                 ?>
-                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_delete[]" class="cbxMain" onchange="checkMain(this)"/></th>
+                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_selected[]" class="cbxMain" onchange="checkMain(this)"/></th>
                                                 <?php
                                                     }
                                                 ?>
@@ -93,7 +93,7 @@
                                                 {
                                                     echo '
                                                     <tr>
-                                                        <td><input type="checkbox" name="chk_delete[]" class="chk_delete" value="'.$row['id'].'" /></td>
+                                                        <td><input type="checkbox" name="chk_selected[]" class="chk_selected" value="'.$row['id'].'" /></td>
                                                         <td>'.$row['zone'].'</td>
                                                         <td style="width:70px;"><image src="image/'.basename($row['image']).'" style="width:60px;height:60px;"/></td>
                                                         <td>'.$row['cname'].'</td>
@@ -166,7 +166,7 @@
                                     <table id="table" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_delete[]" class="cbxMain" onchange="checkMain(this)"/></th>
+                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_selected[]" class="cbxMain" onchange="checkMain(this)"/></th>
                                                 <th>Image</th>
                                                 <th>Name</th>
                                                 <th>Age</th>
@@ -182,7 +182,7 @@
                                             {
                                                 echo '
                                                 <tr>
-                                                    <td><input type="checkbox" name="chk_delete[]" class="chk_delete" value="'.$row['id'].'" /></td>
+                                                    <td><input type="checkbox" name="chk_selected[]" class="chk_selected" value="'.$row['id'].'" /></td>
                                                     <td style="width:70px;"><image src="image/'.basename($row['image']).'" style="width:60px;height:60px;"/></td>
                                                     <td>'.$row['cname'].'</td>
                                                     <td>'.$row['age'].'</td>

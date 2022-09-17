@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2022 at 08:14 AM
+-- Generation Time: Sep 17, 2022 at 09:21 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_barangay`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pension`
+--
+
+CREATE TABLE `pension` (
+  `id` int(11) NOT NULL,
+  `name` varchar(225) NOT NULL,
+  `monthlyPension` varchar(225) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pension`
+--
+
+INSERT INTO `pension` (`id`, `name`, `monthlyPension`, `date`) VALUES
+(1, ' , ', '', '2022-09-17'),
+(2, 'Reyes ,Jason V De los', '2400', '2022-09-17'),
+(3, 'Advincula ,Rowena Q.', '2000', '2022-09-17'),
+(4, ' , ', '', '2022-09-17'),
+(5, 'Reyes ,Jason V De los', '2400', '2022-09-17'),
+(6, 'Advincula ,Rowena Q.', '2000', '2022-09-17');
 
 -- --------------------------------------------------------
 
@@ -68,6 +93,15 @@ CREATE TABLE `senior_citizen` (
   `contactPersonNumber` varchar(225) NOT NULL,
   `contactAddress` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `senior_citizen`
+--
+
+INSERT INTO `senior_citizen` (`id`, `seniorCitizenID`, `firstName`, `middleName`, `lastName`, `gender`, `birthdate`, `age`, `birthplace`, `address`, `purokId`, `contactNumber`, `pension`, `monthlyPension`, `status`, `contactPerson`, `contactPersonNumber`, `contactAddress`) VALUES
+(2, '1234', 'Jason V De', 'los', 'Reyes', 'Male', '2000-07-12', '22', 'bago city', 'Manzanilla St. Brgy. Zone 5', 2, '+639369446326', 'Yes', '2400', 'active', 'Jason V De los Reyes', 'Jason V De los Reyes', 'Lacson St'),
+(3, '12345', 'jonna', 'Q', 'rabago', 'Female', '2000-12-12', '21', 'la castellana', 'bago city', 2, '1234455555445', 'No', '30000', 'active', 'Jason V De los Reyes', 'Jason V De los Reyes', 'Capitol subd. Hilado St'),
+(4, '123456', 'Rowena', 'Q.', 'Advincula', 'Female', '2000-12-12', '21', 'Pulopanadan', 'bago city', 0, '09476779124', 'Yes', '2000', 'active', 'Rowena Advincula', 'Rowena Advincula', 'Capitol subd. Hilado St');
 
 -- --------------------------------------------------------
 
@@ -195,7 +229,13 @@ INSERT INTO `tbllogs` (`id`, `user`, `logdate`, `action`) VALUES
 (23, 'Administrator', '2022-09-17 13:58:30', 'Update User'),
 (24, 'Administrator', '2022-09-17 13:59:29', 'Update User'),
 (25, 'Administrator', '2022-09-17 14:00:21', 'Update User'),
-(26, 'Administrator', '2022-09-17 14:01:17', 'Update Userjason.delosreyes');
+(26, 'Administrator', '2022-09-17 14:01:17', 'Update Userjason.delosreyes'),
+(27, 'Administrator', '2022-09-17 14:23:23', 'Added Senior Citizen named De Los Reyes, Shaneen '),
+(28, 'Administrator', '2022-09-17 14:24:04', 'Added Senior Citizen named Reyes, Jason V De los'),
+(29, 'Administrator', '2022-09-17 14:24:35', 'Added Senior Citizen named Reyes, Jason V De los'),
+(30, 'Administrator', '2022-09-17 14:26:00', 'Added Senior Citizen named rabago, jonna Q'),
+(31, 'Administrator', '2022-09-17 14:26:45', 'Added Senior Citizen named Cantiller, Kristasl Q.'),
+(32, 'Administrator', '2022-09-17 14:28:34', 'Added Senior Citizen named ,  ');
 
 -- --------------------------------------------------------
 
@@ -367,6 +407,12 @@ INSERT INTO `tblzone` (`id`, `zone`, `username`, `password`) VALUES
 --
 
 --
+-- Indexes for table `pension`
+--
+ALTER TABLE `pension`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `purok`
 --
 ALTER TABLE `purok`
@@ -455,6 +501,12 @@ ALTER TABLE `tblzone`
 --
 
 --
+-- AUTO_INCREMENT for table `pension`
+--
+ALTER TABLE `pension`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `purok`
 --
 ALTER TABLE `purok`
@@ -464,7 +516,7 @@ ALTER TABLE `purok`
 -- AUTO_INCREMENT for table `senior_citizen`
 --
 ALTER TABLE `senior_citizen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tblactivity`
@@ -500,7 +552,7 @@ ALTER TABLE `tblhousehold`
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tblofficial`

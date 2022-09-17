@@ -68,7 +68,7 @@
                                                 if((!isset($_SESSION['staff'])) && (!isset($_SESSION['resident'])))
                                                 {
                                                 ?>
-                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_delete[]" class="cbxMain" onchange="checkMain(this)"/></th>
+                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_selected[]" class="cbxMain" onchange="checkMain(this)"/></th>
                                                 <?php
                                                     }
                                                 ?>
@@ -88,7 +88,7 @@
                                                 {
                                                     echo '
                                                     <tr>
-                                                        <td><input type="checkbox" name="chk_delete[]" class="chk_delete" value="'.$row['id'].'" /></td>
+                                                        <td><input type="checkbox" name="chk_selected[]" class="chk_selected" value="'.$row['id'].'" /></td>
                                                         <td>'.$row['dateofactivity'].'</td>
                                                         <td>'.$row['activity'].'</td>
                                                         <td>'.$row['description'].'</td>
@@ -173,7 +173,7 @@
 <script type="text/javascript">
 
 var select_all = document.getElementById("cbxMainphoto"); //select all checkbox
-var checkboxes = document.getElementsByClassName("chk_deletephoto"); //checkbox items
+var checkboxes = document.getElementsByClassName("chk_selectedphoto"); //checkbox items
 
 //select all checkboxes
 select_all.addEventListener("change", function(e){
