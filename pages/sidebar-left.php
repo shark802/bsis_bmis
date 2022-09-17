@@ -56,7 +56,7 @@
                             </li>          
                             <li>
                             <a href="../users/users.php">
-                                <i class="fa fa-history"></i> <span>Users</span>
+                                <i class="fa fa-users"></i> <span>Users</span>
                             </a>
                         </li>                            
                             
