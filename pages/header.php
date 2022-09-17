@@ -2,8 +2,8 @@
 
    echo  '<header class="header">
             <a href="#" class="logo">
-                Brgy. Tan-awan System
-                <img src="../../img/tan-awan.png" style="height:100px; width:100px;"/>
+                Brgy.Balingasag System
+                <img src="../../img/Barangay-Balingasag-Logo.png" style="height:100px; width:100px;"/>
                 
             </a>
 

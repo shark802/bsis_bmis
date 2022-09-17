@@ -18,7 +18,7 @@ session_start();
           <div class="col-md-4 col-md-offset-4">
               <div class="panel panel-default">
             <div class="panel-heading" style="text-align:center;">
-                <img src="img/tan-awan.png" style="height:100px;"/>
+                <img src="img/Barangay-Balingasag-Logo.png" style="height:100px;"/>
               <h3 class="panel-title">
                 <strong>
                     Barangay Administration

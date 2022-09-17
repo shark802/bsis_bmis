@@ -58,7 +58,7 @@
                                     <table id="table" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>                                   
-                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_selected[]" class="cbxMain" onchange="checkMain(this)"/></th>
+                                                <th style="width: 20px !important;"><input type="checkbox" name="chk_delete[]" class="cbxMain" onchange="checkMain(this)"/></th>
                                                 <th>Purok Name</th>
                                                 <th>Purok Leader</th>
                                                 <th>Contact</th>
@@ -73,7 +73,7 @@
                                                 {
                                                     echo '
                                                     <tr>
-                                                        <td><input type="checkbox" name="chk_selected[]" class="chk_selected" value="'.$row['id'].'" /></td>
+                                                        <td><input type="checkbox" name="chk_delete[]" class="chk_delete" value="'.$row['id'].'" /></td>
                                                         <td>'.$row['purokName'].'</td>
                                                         <td>'.$row['lastName'].', '.$row['firstName'].'</td>
                                                         <td>'.$row['contactInfo'].'</td>

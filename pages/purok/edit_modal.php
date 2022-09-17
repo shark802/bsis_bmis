@@ -12,7 +12,7 @@
             <input name="id" class="form-control input-sm" type="hidden" value="'.$row['id'].'"/>
             <div class="form-group">
                 <label>Purok Name:</label>
-                <input name="purokName" class="form-control input-sm" type="text" placeholder="Purok Name" value="'.$row['purokName'].'"/>
+                <input name="purokName" class="form-control input-sm" type="text" placeholder="Purok Name" value="'.$row['purokName'].'" required/>
             </div>
             <hr>
             <div class="form-group">
@@ -20,15 +20,15 @@
             </div>
             <div class="form-group">
                 <label>First Name:</label>
-                <input name="firstName" class="form-control input-sm" id="username" type="text" placeholder="First Name" value="'.$row['firstName'].'"/>
+                <input name="firstName" class="form-control input-sm" id="username" type="text" placeholder="First Name" value="'.$row['firstName'].'" required/>
             </div>
             <div class="form-group">
                 <label>Last Name:</label>
-                <input name="lastName" class="form-control input-sm" id="username" type="text" placeholder="Last Name" value="'.$row['lastName'].'"/>
+                <input name="lastName" class="form-control input-sm" id="username" type="text" placeholder="Last Name" value="'.$row['lastName'].'" required/>
             </div>
             <div class="form-group">
                 <label>Contact Info:</label>
-                <input name="contactInfo" class="form-control input-sm" type="text" placeholder="Contact Info" value="'.$row['contactInfo'].'"/>
+                <input name="contactInfo" class="form-control input-sm" type="text" placeholder="Contact Info" value="'.$row['contactInfo'].'" required/>
             </div>
         </div>
     </div>

@@ -13,44 +13,23 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Purok Name:</label>
-                                    <input name="purokName" class="form-control input-sm" type="text" placeholder="Purok Name"/>
+                                    <input name="purokName" class="form-control input-sm" type="text" placeholder="Purok Name" required/>
                                 </div>
                                 <hr>
                                 <div class="form-group">
-                                    <label>Purok</label>
-                                    <select name="purokId" class="form-control input-sm">
-                                    <option selected="" disabled="">-- Select Purok -- </option>   
-                                    <?php 
-                                        $purokSql = mysqli_query($con,"SELECT * from purok");
-                                        while($row = mysqli_fetch_array($purokSql)){
-                                            $id = $row['id'];
-                                            echo "
-                                                <option value='".$id."'>".$row['purokName']."</option>
-                                            ";
-
-                                        }
-                                    ?>
-                                    </select>
-                                </div>
-                                <div class="form-group">
                                     <label>Purok Leader:</label>
                                 </div>
-
-                                
-
-                               
-
                                 <div class="form-group">
                                     <label>First Name:</label>
-                                    <input name="firstName" class="form-control input-sm" id="username" type="text" placeholder="First Name"/>
+                                    <input name="firstName" class="form-control input-sm" id="username" type="text" placeholder="First Name" required/>
                                 </div>
                                 <div class="form-group">
                                     <label>Last Name:</label>
-                                    <input name="lastName" class="form-control input-sm" id="username" type="text" placeholder="Last Name"/>
+                                    <input name="lastName" class="form-control input-sm" id="username" type="text" placeholder="Last Name" required/>
                                 </div>
                                 <div class="form-group">
                                     <label>Contact Info:</label>
-                                    <input name="contactInfo" class="form-control input-sm" type="text" placeholder="Contact Info"/>
+                                    <input name="contactInfo" class="form-control input-sm" type="text" placeholder="Contact Info" required/>
                                 </div>
                             </div>
                         </div>
