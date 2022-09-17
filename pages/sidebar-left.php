@@ -56,7 +56,7 @@
                             </li>
                             <li>
                                 <a href="../logs/logs.php">
-                                    <i class="fa fa-history"></i> <span>SMS</span>
+                                    <i class="fa fa-history"></i> <span>Actitvy log</span>
                                 </a>
                             </li>          
                             <li>
